@@ -13,15 +13,18 @@
 	    ./bootloader.nix
 
 	    # server configs
+	    ./server_packages.nix
+	    ./transmission.nix
+	    ./server_mounts.nix
 	    #./server_timers.nix
-	    #./server_packages.nix
+
 	];
 
     # kernel
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
     # hostname
-    networking.hostName = "blair-laptop"; 
+    networking.hostName = "blair-server"; 
 
     # networking
     networking.networkmanager.enable = true;
