@@ -15,7 +15,9 @@
 	    ./server_packages.nix
 	    #./transmission.nix
 	    #./server_mounts.nix
-	    #./server_timers.nix
+
+	    ./timers_system.nix
+	    ./timers_user.nix
 
 	];
 
