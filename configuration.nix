@@ -10,7 +10,6 @@
 	    ./packages.nix
 	    ./fonts.nix
 	    ./nvim.nix
-	    ./bootloader.nix
 
 	    # server configs
 	    ./server_packages.nix
@@ -19,6 +18,9 @@
 	    #./server_timers.nix
 
 	];
+
+    # bootloader
+    boot.loader.systemd-boot.enable = true;
 
     # kernel
     boot.kernelPackages = pkgs.linuxPackages_latest;
