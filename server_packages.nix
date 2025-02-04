@@ -2,10 +2,6 @@
 {
 
     # docker
-    virtualisation.docker.rootless =  {
-	enable = true;
-	setSocketVariable = true;
-    };
-
+    virtualisation.docker.enable = true;
 
 }
