@@ -5,7 +5,7 @@
     # rclone
     #----------------------------------------
 
-    systemd.timers."rclone" = {
+    systemd.user.timers."rclone" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "00/4:10";
@@ -15,10 +15,10 @@
 	};
     };
 
-    systemd.services."rclone" = {
+    systemd.user.services."rclone" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = config.users.users.default.name;
+	    User = "blair";
 	    ExecStart="/home/blair/cronjobs/active/rclone";
 	};
     };
@@ -27,7 +27,7 @@
     # forbes 
     #----------------------------------------
 
-    systemd.timers."forbes" = {
+    systemd.user.timers."forbes" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar= "*-*-* 21:38:00";
@@ -37,10 +37,10 @@
 	};
     };
 
-    systemd.services."forbes" = {
+    systemd.user.services."forbes" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = config.users.users.default.name;
+	    User = "blair";
 	    ExecStart = "/home/blair/cloud_work/empirical_research/scrape_forbes/run.sh";
 	};
     };
@@ -49,7 +49,7 @@
     # social media scrape
     #----------------------------------------
 
-    systemd.timers."social_scrape" = {
+    systemd.user.timers."social_scrape" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "*-*-* 05:00:00";
@@ -59,10 +59,10 @@
 	};
     };
 
-    systemd.services."social_scrape" = {
+    systemd.user.services."social_scrape" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = config.users.users.default.name;
+	    User = "blair";
 	    ExecStart = "/home/blair/cronjobs/active/scrape_social";
 	};
     };
@@ -71,7 +71,7 @@
     # social email
     #----------------------------------------
 
-    systemd.timers."social_email" = {
+    systemd.user.timers."social_email" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "*-*-01 07:30:00";
@@ -81,10 +81,10 @@
 	};
     };
 
-    systemd.services."social_email" = {
+    systemd.user.services."social_email" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = config.users.users.default.name;
+	    User = "blair";
 	    ExecStart = "/home/blair/Projects/scrape_twitter/email/send_analysis.sh";
 	};
     };
@@ -93,7 +93,7 @@
     # wordpress_scrape 
     #----------------------------------------
 
-    systemd.timers."wordpress_scrape" = {
+    systemd.user.timers."wordpress_scrape" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "*-*-02 05:30:00";
@@ -103,10 +103,10 @@
 	};
     };
 
-    systemd.services."wordpress_scrape" = {
+    systemd.user.services."wordpress_scrape" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = config.users.users.default.name;
+	    User = "blair";
 	    ExecStart = "/home/blair/Projects/scrape_wordpress/RUNALL.sh";
 	};
     };
