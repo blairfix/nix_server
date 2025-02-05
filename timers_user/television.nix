@@ -16,7 +16,7 @@
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/Projects/television/runall.sh"
+	    ExecStart = "/home/blair/Projects/television/runall.sh";
 	};
     };
 
