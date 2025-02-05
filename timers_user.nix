@@ -18,8 +18,8 @@
     systemd.services."rclone" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = "blair";
-	    ExecStart="/home/blair/cronjobs/active/rclone";
+	    User = "config.users.users.default.name";
+	    ExecStart="/home/config.users.users.default.name/cronjobs/active/rclone";
 	};
     };
 
@@ -40,8 +40,8 @@
     systemd.services."forbes" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = "blair";
-	    ExecStart = "/home/blair/cloud_work/empirical_research/scrape_forbes/run.sh";
+	    User = "config.users.users.default.name";
+	    ExecStart = "/home/config.users.users.default.name/cloud_work/empirical_research/scrape_forbes/run.sh";
 	};
     };
 
@@ -62,8 +62,8 @@
     systemd.services."social_scrape" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = "blair";
-	    ExecStart = "/home/blair/cronjobs/active/scrape_social";
+	    User = "config.users.users.default.name";
+	    ExecStart = "/home/config.users.users.default.name/cronjobs/active/scrape_social";
 	};
     };
 
@@ -84,8 +84,8 @@
     systemd.services."social_email" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = "blair";
-	    ExecStart = "/home/blair/Projects/scrape_twitter/email/send_analysis.sh";
+	    User = "config.users.users.default.name";
+	    ExecStart = "/home/config.users.users.default.name/Projects/scrape_twitter/email/send_analysis.sh";
 	};
     };
 
@@ -106,10 +106,10 @@
     systemd.services."wordpress_scrape" = {
 	serviceConfig = {
 	    Type = "simple";
-	    User = "blair";
-	    ExecStart = "/home/blair/Projects/scrape_wordpress/RUNALL.sh";
+	    User = "config.users.users.default.name";
+	    ExecStart = "/home/config.users.users.default.name/Projects/scrape_wordpress/RUNALL.sh";
 	};
     };
 
 
-}
+
