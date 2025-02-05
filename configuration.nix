@@ -4,7 +4,10 @@
 	[ 
 	    ./hardware-configuration.nix
 
+
 	    # configs
+	    #----------------------------
+
 	    ./r_packages.nix
 	    ./python_packages.nix
 	    ./packages.nix
@@ -12,12 +15,37 @@
 	    ./nvim.nix
 
 	    # server configs
+	    #----------------------------
+
 	    ./server_packages.nix
 	    #./transmission.nix
 	    #./server_mounts.nix
 
-	    ./timers_system.nix
-	    ./timers_user.nix
+	    # system timers
+	    #----------------------------
+
+	    ./timers_system/borg_blair.nix
+	    ./timers_system/borg_media.nix
+	    ./timers_system/camera_sync.nix
+
+
+	    # user timers
+	    #----------------------------
+
+	    ./timers_user/audiobookshelf.nix
+	    ./timers_user/forbes.nix
+	    ./timers_user/jellyfin.nix
+	    ./timers_user/komga.nix
+	    ./timers_user/pp_convert.nix
+	    ./timers_user/pp_index.nix
+	    ./timers_user/rclone.nix
+	    ./timers_user/sf_archive.nix
+	    ./timers_user/smartfind.nix
+	    ./timers_user/social_email.nix
+	    ./timers_user/social.nix
+	    ./timers_user/television.nix
+	    ./timers_user/thunderbird.nix
+	    ./timers_user/wordpress.nix
 
 	];
 
