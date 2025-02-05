@@ -1,6 +1,6 @@
 { config, ... }:
 {
-    # scrape smartfind
+    # smartfind
     #----------------------------------------
 
     systemd.user.timers."smartfind" = {
