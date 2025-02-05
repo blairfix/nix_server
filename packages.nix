@@ -2,7 +2,7 @@
     environment.systemPackages = with pkgs;  [ 
 
 	# iso generator
-	nixos-generators
+	#nixos-generators
 
 	# vm 
 	#spice
@@ -172,6 +172,10 @@
 
 	# games
 	#retroarchFull
+	
+	# downloading
+	flexget
+	transmission_4
 
 	];
 }

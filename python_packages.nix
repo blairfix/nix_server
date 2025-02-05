@@ -29,6 +29,10 @@
 		# audio
 		eyeD3
 
+		# download
+		transmission-rpc
+
+
 	    ]))
     ];
 }
