@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install configs
-sudo cp -r  *
+sudo cp -R  * /etc/nixos/
 
 # install nix_build
 mkdir /home/blair/bin
