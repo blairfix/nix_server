@@ -27,6 +27,7 @@
 	    bash
 	    python
 	    R
+	    firefox
 	];
 	script = ''
 	    bash /home/blair/cloud_work/empirical_research/scrape_forbes/run.sh

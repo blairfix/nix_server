@@ -27,6 +27,7 @@
 	    bash
 	    python
 	    R
+	    firefox
 	];
 	script = ''
 	    bash /home/blair/cronjobs/active/scrape_social

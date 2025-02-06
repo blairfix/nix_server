@@ -14,12 +14,23 @@
 	};
     };
 
-    systemd.services."social_email" = {
+    systemd.services."social_email" = let
+	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
+		selenium
+	]);
+
+    in {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/Projects/scrape_twitter/email/send_analysis.sh";
 	};
-    };
 
+	path = with pkgs; [ 
+	    bash
+	    R
+	];
+	script = ''
+	    bash /home/blair/Projects/scrape_twitter/email/send_analysis
+	    '';
+    };
 }

@@ -11,7 +11,7 @@
     # multimedia
     fileSystems."/media/blair/multimedia" =
     { 
-	device = "/dev/disk/by-uuid/UUID=f8d56395-fc2e-4add-8bc0-af96159f068e";
+	device = "/dev/disk/by-uuid/UUID=a37ed80a-8cab-4b8c-b944-2208ecffac28";
 	fsType = "ext4";
     };
 
