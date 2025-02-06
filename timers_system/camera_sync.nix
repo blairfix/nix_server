@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # camera sync
@@ -18,8 +18,14 @@
 	serviceConfig = {
 	    Type = "simple";
 	    User = "root";
-	    ExecStart="/home/blair/cronjobs/active/camera_sync";
 	};
+	path = with pkgs; [ 
+	    bash
+	    rsync
+	];
+	script = ''
+	    bash /home/blair/cronjobs/active/camera_sync
+	    '';
     };
 
 }

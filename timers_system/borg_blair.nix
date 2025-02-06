@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # borg blair
@@ -17,8 +17,15 @@
 	serviceConfig = {
 	    Type = "simple";
 	    User = "root";
-	    ExecStart = "/home/blair/Projects/borg/blair/backup.sh";
 	};
+
+	path = with pkgs; [ 
+	    bash
+	    borgbackup
+	];
+	script = ''
+	    bash /home/blair/Projects/borg/blair/backup.sh
+	    '';
     };
 
 }
