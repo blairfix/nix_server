@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # photoprism convert 
     #----------------------------------------
 
-    systemd.user.timers."pp_convert" = {
+    systemd.timers."pp_convert" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar="*-*-* 03:23:00";
@@ -13,12 +13,18 @@
 	};
     };
 
-    systemd.user.services."pp_convert" = {
+    systemd.services."pp_convert" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/cronjobs/active/photoprism_convert_backup";
 	};
+	path = with pkgs; [
+	    docker
+	    docker-compose
+	    bash
+	];
+	script = ''
+	    bash /home/blair/cronjobs/active/photoprism_convert_backup
+	    '';
     };
-
 }

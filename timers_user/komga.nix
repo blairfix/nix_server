@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # komga 
     #----------------------------------------
 
-    systemd.user.timers."komga" = {
+    systemd.timers."komga" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnBootSec = "1 m";
@@ -12,13 +12,19 @@
 	};
     };
 
-    systemd.user.services."komga" = {
+    systemd.services."komga" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/cronjobs/active/komga_start";
-
 	};
-    };
 
+	path = with pkgs; [
+	    docker
+	    docker-compose
+	    bash
+	];
+	script = ''
+	    bash /home/blair/cronjobs/active/komga_start
+	    '';
+    };
 }

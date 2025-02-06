@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # wordpress_scrape 
     #----------------------------------------
 
-    systemd.user.timers."wordpress_scrape" = {
+    systemd.timers."wordpress_scrape" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "*-*-02 05:30:00";
@@ -14,12 +14,25 @@
 	};
     };
 
-    systemd.user.services."wordpress_scrape" = {
+    systemd.services."wordpress_scrape" = let
+	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
+		selenium
+		pandas
+		datetime
+	]);
+
+    in {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/Projects/scrape_wordpress/RUNALL.sh";
 	};
+	path = with pkgs; [ 
+	    bash
+	    python
+	    R
+	];
+	script = ''
+	    bash /home/blair/Projects/scrape_wordpress/RUNALL.sh
+	    '';
     };
-
 }

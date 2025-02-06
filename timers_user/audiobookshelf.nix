@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # audiobookshelf 
     #----------------------------------------
 
-    systemd.user.timers."audiobookshelf" = {
+    systemd.timers."audiobookshelf" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnBootSec = "1 m";
@@ -12,13 +12,19 @@
 	};
     };
 
-    systemd.user.services."audiobookshelf" = {
+    systemd.services."audiobookshelf" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/cronjobs/active/audio_bookshelf_start";
-
 	};
+	path = with pkgs; [ 
+	    docker
+	    docker-compose
+	    bash
+	];
+	script = ''
+	    bash /home/blair/cronjobs/active/audio_bookshelf_start
+	    '';
     };
 
 }

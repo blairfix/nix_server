@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # television rss
     #----------------------------------------
 
-    systemd.user.timers."television" = {
+    systemd.timers."television" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "*:0,15,30,45";
@@ -12,12 +12,26 @@
 	};
     };
 
-    systemd.user.services."television" = {
+    systemd.services."television" = let 
+	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
+		selenium
+		transmission-rpc
+
+	]);
+
+    in {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/Projects/television/runall.sh";
 	};
-    };
+	path = with pkgs; [ 
+	    bash
+	    flexget
+	    R
+	];
+	script = ''
+	    bash /home/blair/Projects/television/runall.sh
+	    '';
 
+    };
 }

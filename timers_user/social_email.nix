@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # social email
     #----------------------------------------
 
-    systemd.user.timers."social_email" = {
+    systemd.timers."social_email" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "*-*-01 07:30:00";
@@ -14,7 +14,7 @@
 	};
     };
 
-    systemd.user.services."social_email" = {
+    systemd.services."social_email" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";

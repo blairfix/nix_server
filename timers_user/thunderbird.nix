@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # thunderbird 
     #----------------------------------------
 
-    systemd.user.timers."thunderbird" = {
+    systemd.timers."thunderbird" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "hourly";
@@ -12,12 +12,17 @@
 	};
     };
 
-    systemd.user.services."thunderbird" = {
+    systemd.services."thunderbird" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart="/home/blair/cloud_work/timesheet/thunderbird_sync.sh";
 	};
+	path = with pkgs; [ 
+	    bash
+	    thunderbird
+	];
+	script = ''
+	    bash /home/blair/cloud_work/timesheet/thunderbird_sync.sh
+	    '';
     };
-
 }

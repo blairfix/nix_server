@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # social media scrape
     #----------------------------------------
 
-    systemd.user.timers."social_scrape" = {
+    systemd.timers."social_scrape" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "*-*-* 05:00:00";
@@ -14,12 +14,22 @@
 	};
     };
 
-    systemd.user.services."social_scrape" = {
+    systemd.services."social_scrape" = let
+	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
+		selenium
+	]);
+    in {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/cronjobs/active/scrape_social";
 	};
+	path = with pkgs; [ 
+	    bash
+	    python
+	    R
+	];
+	script = ''
+	    bash /home/blair/cronjobs/active/scrape_social
+	    '';
     };
-
 }

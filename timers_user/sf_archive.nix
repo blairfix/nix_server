@@ -1,9 +1,9 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
     # sf_archive archive
     #----------------------------------------
 
-    systemd.user.timers."sf_archive" = {
+    systemd.timers."sf_archive" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "weekly";
@@ -12,12 +12,18 @@
 	};
     };
 
-    systemd.user.services."sf_archive" = {
+    systemd.services."sf_archive" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/cloud_work/smart_find/make_archive.sh";
-
 	};
+	path = with pkgs; [
+	    bash
+	    trash-cli
+	    gnutar
+	];
+	script = ''
+	    bash /home/blair/cloud_work/smart_find/make_archive.sh
+	    '';
     };
 }

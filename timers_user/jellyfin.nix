@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # jellyfin 
     #----------------------------------------
 
-    systemd.user.timers."jellyfin" = {
+    systemd.timers."jellyfin" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnBootSec = "1 m";
@@ -12,13 +12,19 @@
 	};
     };
 
-    systemd.user.services."jellyfin" = {
+    systemd.services."jellyfin" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/cronjobs/active/jellyfin_start";
-
 	};
-    };
 
+	path = with pkgs; [
+	    docker
+	    docker-compose
+	    bash
+	];
+	script = ''
+	    bash /home/blair/cronjobs/active/jellyfin_start
+	    '';
+    };
 }

@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
 
     # forbes 
     #----------------------------------------
 
-    systemd.user.timers."forbes" = {
+    systemd.timers."forbes" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar= "*-*-* 21:38:00";
@@ -14,12 +14,23 @@
 	};
     };
 
-    systemd.user.services."forbes" = {
+    systemd.services."forbes" = let
+	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
+		selenium
+	]);
+    in {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    ExecStart = "/home/blair/cloud_work/empirical_research/scrape_forbes/run.sh";
 	};
+	path = with pkgs; [ 
+	    bash
+	    python
+	    R
+	];
+	script = ''
+	    bash /home/blair/cloud_work/empirical_research/scrape_forbes/run.sh
+	    '';
     };
 
 }
