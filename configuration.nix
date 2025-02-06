@@ -101,7 +101,6 @@
     programs.virt-manager.enable = true;
 
     # sound with pipewire
-    #sound.enable = true;
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
@@ -109,13 +108,10 @@
 	alsa.enable = true;
 	alsa.support32Bit = true;
 	pulse.enable = true;
-	#jack.enable = true;
     };
 
     services.pipewire.wireplumber.enable = true;
 
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
 
     # user account. Add password with ‘passwd’.
     users.users.blair = {
