@@ -7,8 +7,8 @@
     systemd.timers."wordpress_scrape" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
-	    OnCalendar = "*-*-02 05:30:00";
-	    RandomizedDelaySec = "400";
+	    OnCalendar = "*-*-10 12:48:00";
+	    RandomizedDelaySec = "1";
 	    Persistent = "true";
 	    Unit = "wordpress_scrape.service";
 	};
@@ -30,9 +30,12 @@
 	    bash
 	    python
 	    R
+	    firefox
 	];
 	script = ''
 	    bash /home/blair/Projects/scrape_wordpress/RUNALL.sh
 	    '';
     };
 }
+
+
