@@ -14,10 +14,9 @@
     systemd.services."smartfind" = let
 	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
 		selenium
+		datetime
 	]);
     in {
-
-
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
@@ -27,10 +26,12 @@
 	    python
 	    R
 	    firefox
-	    datetime
+	    ps
 	];
 	script = ''
 	    bash /home/blair/cloud_work/smart_find/is_smartfind_running.sh
-	    '';`
+	    '';
     };
 }
+
+
