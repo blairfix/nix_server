@@ -17,9 +17,9 @@
 	    # server configs
 	    #----------------------------
 
-	    ./server_packages.nix
-	    #./transmission.nix
+	    ./transmission.nix
 	    #./server_mounts.nix
+
 
 	    # system timers
 	    #----------------------------
@@ -136,6 +136,8 @@
     # unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    # docker
+    virtualisation.docker.enable = true;
 
     # for bash scripts 
     services.envfs.enable = true;
