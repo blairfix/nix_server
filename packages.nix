@@ -170,11 +170,9 @@
 	
 	# downloading
 	flexget
-	transmission_4
 
 	# email
 	thunderbird
-
 
 	];
 }

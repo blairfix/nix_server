@@ -18,6 +18,7 @@
 	    #----------------------------
 
 	    ./transmission.nix
+	    ./samba.nix
 	    #./server_mounts.nix
 
 

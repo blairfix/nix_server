@@ -12,14 +12,7 @@
 	};
     };
 
-    systemd.services."television" = let 
-	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
-		selenium
-		transmission-rpc
-
-	]);
-
-    in {
+    systemd.services."television" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
@@ -35,3 +28,4 @@
 
     };
 }
+
