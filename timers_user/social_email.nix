@@ -7,19 +7,14 @@
     systemd.timers."social_email" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
-	    OnCalendar = "*-*-01 07:30:00";
-	    RandomizedDelaySec = "400";
+	    OnCalendar = "*-*-01 04:25:00";
+	    RandomizedDelaySec = "3";
 	    Persistent = "true";
 	    Unit = "social_email.service";
 	};
     };
 
-    systemd.services."social_email" = let
-	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
-		selenium
-	]);
-
-    in {
+    systemd.services."social_email" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
@@ -30,7 +25,9 @@
 	    R
 	];
 	script = ''
-	    bash /home/blair/Projects/scrape_twitter/email/send_analysis
+	    bash /home/blair/Projects/scrape_twitter/email/send_analysis.sh
 	    '';
     };
 }
+
+
