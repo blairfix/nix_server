@@ -89,7 +89,6 @@
 
 
 	# text editors and command line tools for text
-	#neovim 
 	vimPlugins.vim-plug
 	pandoc
 	pandoc-eqnos
@@ -115,7 +114,6 @@
 	gimp 
 	pngquant 
 	jpegoptim 
-	#imagemagick
 	imagemagickBig
 	imv
 
@@ -169,13 +167,14 @@
 
 	# containers
 	docker-compose
-
-	# games
-	#retroarchFull
 	
 	# downloading
 	flexget
 	transmission_4
+
+	# email
+	thunderbird
+
 
 	];
 }
