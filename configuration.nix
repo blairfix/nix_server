@@ -93,8 +93,8 @@
     services.syncthing = {
 	enable = true;
 	user = "blair";
-	dataDir = "/home/blair/cloud_work"; 
-	configDir = "/home/blair/.config/syncthing";
+	#dataDir = "/home/blair/cloud_work"; 
+	#configDir = "/home/blair/.config/syncthing";
     };
 
     # cups
