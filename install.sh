@@ -4,6 +4,6 @@
 sudo cp -R  * /etc/nixos/
 
 # install nix_build
-mkdir /home/blair/bin
-cp yay /home/blair/bin
+#mkdir /home/blair/bin
+#cp yay /home/blair/bin
 
