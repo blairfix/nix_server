@@ -1,4 +1,7 @@
 
+# home
+sudo mount /dev/sda1 /home
+
 # multimedia
 sudo mount /dev/sdd1 /media/blair/multimedia
 
