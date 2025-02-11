@@ -17,16 +17,16 @@
 	    # server configs
 	    #----------------------------
 
-	    #./transmission.nix
-	    #./samba.nix
+	    ./transmission.nix
+	    ./samba.nix
 
 
 	    # system timers
 	    #----------------------------
 
-	    #./timers_system/borg_blair.nix
-	    #./timers_system/borg_media.nix
-	    #./timers_system/camera_sync.nix
+	    ./timers_system/borg_blair.nix
+	    ./timers_system/borg_media.nix
+	    ./timers_system/camera_sync.nix
 
 
 	    # user timers
