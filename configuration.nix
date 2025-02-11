@@ -19,7 +19,6 @@
 
 	    #./transmission.nix
 	    #./samba.nix
-	    #./server_mounts.nix
 
 
 	    # system timers

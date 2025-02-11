@@ -9,4 +9,4 @@ sudo mount /dev/sdd1 /media/blair/multimedia
 sudo mount /dev/sdc1 /media/blair/Backup_drive
 
 # hardware config
-#nixos-generate-config
+nixos-generate-config
