@@ -19,7 +19,7 @@
 
 	    #./transmission.nix
 	    #./samba.nix
-	    ./server_mounts.nix
+	    #./server_mounts.nix
 
 
 	    # system timers
@@ -59,11 +59,6 @@
 
     # kernel
     boot.kernelPackages = pkgs.linuxPackages_latest;
-
-    # mount disks
-    services.devmon.enable = true;
-    services.gvfs.enable = true;
-    services.udisks2.enable = true;
 
     # hostname
     networking.hostName = "blair-server"; 
