@@ -2,7 +2,7 @@
 {
     imports =
 	[ 
-	    ./hardware-configuration.nix
+	./hardware-configuration.nix
 
 
 	    # configs
@@ -48,10 +48,14 @@
 	    ./timers_user/thunderbird.nix
 	    ./timers_user/wordpress.nix
 
-	];
+	    ];
 
     # bootloader
-    boot.loader.systemd-boot.enable = true;
+    boot.loader.grub = {
+	enable = true;
+	useOSProber = true;
+	device = "/dev/sda";
+    };
 
     # kernel
     boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -146,8 +150,8 @@
     # home directories
     systemd.tmpfiles.rules = [
 	"d /home/blair/Desktop 755 blair users -"
-	"d /home/blair/Downloads 755 blair users -"
-	"d /home/blair/bin 755 blair users -"
+	    "d /home/blair/Downloads 755 blair users -"
+	    "d /home/blair/bin 755 blair users -"
     ];
 
 
