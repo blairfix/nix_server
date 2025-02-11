@@ -148,11 +148,13 @@
     services.envfs.enable = true;
 
 #    # home directories
-#    systemd.tmpfiles.rules = [
-#	"d /home/blair/Desktop 755 blair users -"
-#	    "d /home/blair/Downloads 755 blair users -"
+    systemd.tmpfiles.rules = [
+#	"d /home/blair/desktop 755 blair users -"
+#	    "d /home/blair/downloads 755 blair users -"
 #	    "d /home/blair/bin 755 blair users -"
-#    ];
+	    "d /media/blair/multimedia 755 blair users -"
+	    "d /media/blair/Backup_drive 755 blair users -"
+    ];
 
 
     # version 
