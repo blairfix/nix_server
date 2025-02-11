@@ -32,21 +32,21 @@
 	    # user timers
 	    #----------------------------
 
-#	    ./timers_user/audiobookshelf.nix
-#	    ./timers_user/forbes.nix
-#	    ./timers_user/jellyfin.nix
-#	    ./timers_user/komga.nix
-#	    ./timers_user/pp_convert.nix
-#	    ./timers_user/pp_index.nix
-#	    ./timers_user/rclone.nix
-#	    ./timers_user/sf_archive.nix
-#	    ./timers_user/smartfind.nix
-#	    ./timers_user/social_email.nix
-#	    ./timers_user/social.nix
-#	    ./timers_user/television.nix
-#	    ./timers_user/thunderbird.nix
-#	    ./timers_user/wordpress.nix
-#
+	    ./timers_user/audiobookshelf.nix
+	    ./timers_user/forbes.nix
+	    ./timers_user/jellyfin.nix
+	    ./timers_user/komga.nix
+	    ./timers_user/pp_convert.nix
+	    ./timers_user/pp_index.nix
+	    ./timers_user/rclone.nix
+	    ./timers_user/sf_archive.nix
+	    ./timers_user/smartfind.nix
+	    ./timers_user/social_email.nix
+	    ./timers_user/social.nix
+	    ./timers_user/television.nix
+	    ./timers_user/thunderbird.nix
+	    ./timers_user/wordpress.nix
+
 	    ];
 
     # bootloader
@@ -87,8 +87,8 @@
     services.syncthing = {
 	enable = true;
 	user = "blair";
-	#dataDir = "/home/blair/cloud_work"; 
-	#configDir = "/home/blair/.config/syncthing";
+	dataDir = "/home/blair/cloud_work"; 
+	configDir = "/home/blair/.config/syncthing";
     };
 
     # cups
@@ -146,11 +146,8 @@
     # for bash scripts 
     services.envfs.enable = true;
 
-#    # home directories
+    # mount directories
     systemd.tmpfiles.rules = [
-#	"d /home/blair/desktop 755 blair users -"
-#	    "d /home/blair/downloads 755 blair users -"
-#	    "d /home/blair/bin 755 blair users -"
 	    "d /media/blair/multimedia 755 blair users -"
 	    "d /media/blair/Backup_drive 755 blair users -"
     ];
