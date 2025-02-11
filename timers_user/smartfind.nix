@@ -27,6 +27,9 @@
 	    R
 	    firefox
 	    ps
+	    wc
+	    grep
+	    dirname
 	];
 	script = ''
 	    bash /home/blair/cloud_work/smart_find/is_smartfind_running.sh
