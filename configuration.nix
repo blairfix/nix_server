@@ -19,6 +19,7 @@
 
 	    ./transmission.nix
 	    ./samba.nix
+	    ./caddy.nix
 
 
 	    # system timers
