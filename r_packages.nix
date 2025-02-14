@@ -41,7 +41,6 @@
 		ggpubr
 		qdapRegex
 		fastmatch
-		webshot
 		RcppRoll
 		ggcorrplot
 		xlsx
@@ -112,6 +111,19 @@
 		 };
 		 propagatedBuildInputs = [ Rcpp RcppArmadillo BH RcppZiggurat data_table ];
 		 })
+
+		(buildRPackage {
+		 name = "hubbert";
+		 src = fetchFromGitHub {
+		 owner = "blairfix";
+		 repo = "hubbert";
+		 rev = "master";
+		 sha256 = "sha256-S9J/yClI7u/PzgbA5ZnVyKvePsxFkI28fivPicmST7w=";
+		 };
+		 propagatedBuildInputs = [ Rcpp RcppArmadillo BH ];
+		 })
+
+
 
 
 	    ];

@@ -10,10 +10,10 @@
 		"server string" = "blair-server";
 		"netbios name" = "blair-server";
 		"security" = "user";
-		"hosts allow" = "192.168.0. 127.0.0.1 localhost";
+		"hosts allow" = "100.94.113.109 192.168.0. 127.0.0.1 localhost";
 	    };
 
-	    "private" = {
+	    "emily" = {
 		"path" = "/home/blair/emily";
 		"browseable" = "yes";
 		"read only" = "no";

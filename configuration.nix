@@ -37,6 +37,7 @@
 	    ./timers_user/forbes.nix
 	    ./timers_user/jellyfin.nix
 	    ./timers_user/komga.nix
+	    ./timers_user/mealie.nix
 	    ./timers_user/photoprism.nix
 	    ./timers_user/pp_convert.nix
 	    ./timers_user/pp_index.nix

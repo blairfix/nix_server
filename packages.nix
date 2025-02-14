@@ -81,7 +81,7 @@
 	sshpass
 	openvpn
 	tailscale
-	rtorrent
+	qbittorrent
 
 	# latex
 	texliveFull

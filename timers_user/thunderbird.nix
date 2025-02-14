@@ -7,7 +7,7 @@
     systemd.timers."thunderbird" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
-	    OnCalendar = "hourly";
+	    OnBootSec = "1 m";
 	    Unit = "thunderbird.service";
 	};
     };
