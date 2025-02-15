@@ -3,6 +3,7 @@
 
 services.transmission = { 
 	enable = true; 
+	package = pkgs.transmission_4;
 	openRPCPort = true; 
 	user = "blair";
 	settings = { 
