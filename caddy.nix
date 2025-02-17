@@ -26,6 +26,10 @@ services.caddy = {
 	    reverse_proxy 127.0.0.1:9925
 	}
 
+	http://fix-torrents.com {
+	    reverse_proxy 127.0.0.1:9091
+	}
+
 	'';
 };
 
