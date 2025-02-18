@@ -96,6 +96,7 @@
 
     # cups
     services.printing.enable = true;
+    services.printing.drivers = [ pkgs.hplip ];
 
     # tailscale
     services.tailscale.enable = true;
