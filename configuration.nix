@@ -96,7 +96,9 @@
 
     # cups
     services.printing.enable = true;
-    services.printing.drivers = [ pkgs.hplip ];
+    services.printing.drivers = [ 
+	pkgs.brgenml1cupswrapper
+    ];
 
     # tailscale
     services.tailscale.enable = true;
@@ -152,7 +154,7 @@
 
     # mount directories
     systemd.tmpfiles.rules = [
-	    "d /media/blair/multimedia 755 blair users -"
+	"d /media/blair/multimedia 755 blair users -"
 	    "d /media/blair/Backup_drive 755 blair users -"
     ];
 

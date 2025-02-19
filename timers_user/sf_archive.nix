@@ -7,6 +7,7 @@
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "weekly";
+	    #OnCalendar = "*-*-*  *:04:00";
 	    Persistent = "true";
 	    Unit = "sf_archive.service";
 	};
@@ -21,6 +22,7 @@
 	    bash
 	    trash-cli
 	    gnutar
+	    xz
 	];
 	script = ''
 	    bash /home/blair/cloud_work/smart_find/make_archive.sh

@@ -41,6 +41,8 @@
 	file
 	ncdu
 	xlsx2csv 
+	parted
+
 
 	# utilities
 	git
