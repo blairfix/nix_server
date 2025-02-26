@@ -17,6 +17,8 @@
 	serviceConfig = {
 	    Type = "simple";
 	    User = "root";
+	    WorkingDirectory = "/home/blair/Projects/borg/media";
+
 	};
 	path = with pkgs; [ 
 	    bash

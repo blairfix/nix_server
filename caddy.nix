@@ -30,6 +30,11 @@ services.caddy = {
 	    reverse_proxy 127.0.0.1:9091
 	}
 
+	http://fix-nextcloud.com {
+	    reverse_proxy 127.0.0.1:9571
+	}
+
+
 	'';
 };
 

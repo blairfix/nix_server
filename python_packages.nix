@@ -32,6 +32,9 @@
 		# download
 		transmission-rpc
 
+		# calenar
+		caldav
+
 
 	    ]))
     ];

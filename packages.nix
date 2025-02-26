@@ -25,8 +25,7 @@
 	nodePackages.mathjax
 
 	# file browser
-	nautilus
-	dolphin
+	kdePackages.dolphin
 
 	# terminal 
 	alacritty 
@@ -104,7 +103,7 @@
 	onlyoffice-bin
 
 	# documents viewers
-	okular 
+	kdePackages.okular
 	evince
 	foliate
 	#calibre
@@ -127,7 +126,7 @@
 	kazam
 
 	# finance
-	gnucash
+	#gnucash
 
 	# audio meta data
 	kid3

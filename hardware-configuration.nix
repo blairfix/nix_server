@@ -35,7 +35,7 @@
     };
 
     # backup 1
-    fileSystems."/media/blair/Backup_drive" =
+    fileSystems."/media/blair/backup1" =
     { 
 	device = "/dev/disk/by-uuid/e8b1525a-fd36-4590-9c27-efb926306b01";
 	fsType = "ext4";
@@ -55,6 +55,7 @@
     # (the default) this is the recommended approach. When using systemd-networkd it's
     # still possible to use this option, but it's recommended to use it in conjunction
     # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+
     networking.useDHCP = lib.mkDefault true;
     # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
     # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;

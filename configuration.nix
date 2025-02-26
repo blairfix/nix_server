@@ -38,6 +38,7 @@
 	    ./timers_user/jellyfin.nix
 	    ./timers_user/komga.nix
 	    ./timers_user/mealie.nix
+	    ./timers_user/nextcloud.nix
 	    ./timers_user/photoprism.nix
 	    ./timers_user/pp_convert.nix
 	    ./timers_user/pp_index.nix
@@ -46,6 +47,7 @@
 	    ./timers_user/smartfind.nix
 	    ./timers_user/social_email.nix
 	    ./timers_user/social.nix
+	    ./timers_user/sub_calendar.nix
 	    ./timers_user/television.nix
 	    ./timers_user/thunderbird.nix
 	    ./timers_user/wordpress.nix
@@ -96,9 +98,15 @@
 
     # cups
     services.printing.enable = true;
-    services.printing.drivers = [ 
-	pkgs.brgenml1cupswrapper
-    ];
+
+    # brother hl2040 driver
+    services.printing.drivers = with pkgs; [ 
+	    #(callPackage ./brother_HL2040.nix {})
+	    brlaser
+	    pkgs.brgenml1lpr
+	    pkgs.brgenml1cupswrapper
+	];
+
 
     # tailscale
     services.tailscale.enable = true;
@@ -155,7 +163,7 @@
     # mount directories
     systemd.tmpfiles.rules = [
 	"d /media/blair/multimedia 755 blair users -"
-	    "d /media/blair/Backup_drive 755 blair users -"
+	"d /media/blair/Backup_drive 755 blair users -"
     ];
 
 

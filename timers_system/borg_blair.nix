@@ -17,6 +17,7 @@
 	serviceConfig = {
 	    Type = "simple";
 	    User = "root";
+	    WorkingDirectory = "/home/blair/Projects/borg/blair";
 	};
 
 	path = with pkgs; [ 
