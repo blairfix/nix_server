@@ -4,37 +4,39 @@
 
 	( python3.withPackages( ps: with ps; [ 
 
-		# compute
-		pandas 
-		datetime
-		tqdm
-		imutils
+	    # compute
+	    pandas 
+	    datetime
+	    tqdm
+	    imutils
 
-		# markdown readme previews
-		#grip
+	    # markdown readme previews
+	    #grip
 
-		# scraping
-		selenium
+	    # scraping
+	    selenium
 
-		# r console
-		radian
+	    # r console
+	    radian
 
-		# linode
-		#boto
+	    # linode
+	    #boto
 
-		# ssl
-		requests 
-		cryptography
+	    # ssl
+	    requests 
+	    cryptography
 
-		# audio
-		eyeD3
+	    # audio
+	    eyeD3
 
-		# download
-		transmission-rpc
+	    # download
+	    transmission-rpc
 
-		# calenar
-		caldav
+	    # calenar
+	    caldav
 
+	    # translate
+	    deep-translator
 
 	    ]))
     ];

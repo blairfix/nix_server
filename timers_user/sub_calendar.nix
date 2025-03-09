@@ -13,7 +13,13 @@
 	};
     };
 
-    systemd.services."sub_calendar" = {
+    systemd.services."sub_calendar" = let
+	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
+		caldav
+		pandas
+		datetime
+	]);
+    in {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
@@ -21,7 +27,7 @@
 	};
 	path = with pkgs; [ 
 	    bash
-	    python3
+	    python
 	    R
 	];
 	script = ''

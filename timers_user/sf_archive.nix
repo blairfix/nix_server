@@ -7,7 +7,7 @@
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnCalendar = "weekly";
-	    #OnCalendar = "*-*-*  *:04:00";
+	    #OnCalendar= "*-*-* 13:24:00";
 	    Persistent = "true";
 	    Unit = "sf_archive.service";
 	};

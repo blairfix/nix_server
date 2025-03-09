@@ -7,7 +7,7 @@
     systemd.timers."rclone" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
-	    OnCalendar = "00/4:10";
+	    OnCalendar= "*-*-* 01:38:00";
 	    RandomizedDelaySec = "60";
 	    Persistent = "true";
 	    Unit = "rclone.service";
@@ -22,6 +22,7 @@
 	path = with pkgs; [
 	    bash
 	    rclone
+	    toybox
 	];
 	script = ''
 	    bash /home/blair/cronjobs/active/rclone

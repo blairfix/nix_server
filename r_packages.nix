@@ -130,7 +130,7 @@
 	     owner = "blairfix";
 	     repo = "bfread";
 	     rev = "master";
-	     sha256 = "sha256-cYCVOjWSa66t4Cm2SEk3hEyNaiZFWlB4EwENi4WZ0OM=";
+	     sha256 = "sha256-O5YLpM+v5ITOVlSw5lLGVN3nBWwkcl1IMLqtOc6rMas=";
 	     };
 	     propagatedBuildInputs = [ Rcpp RcppArmadillo BH ];
 	     })
