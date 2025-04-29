@@ -36,6 +36,7 @@
 	    ./timers_user/audiobookshelf.nix
 	    ./timers_user/forbes.nix
 	    ./timers_user/jellyfin.nix
+	    ./timers_user/imap.nix
 	    ./timers_user/komga.nix
 	    ./timers_user/mealie.nix
 	    ./timers_user/nextcloud.nix
@@ -47,9 +48,9 @@
 	    ./timers_user/smartfind.nix
 	    ./timers_user/social_email.nix
 	    ./timers_user/social.nix
+	    ./timers_user/stirling.nix
 	    ./timers_user/sub_calendar.nix
 	    ./timers_user/television.nix
-	    ./timers_user/thunderbird.nix
 	    ./timers_user/wordpress.nix
 
 	    ];

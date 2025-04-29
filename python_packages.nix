@@ -15,6 +15,7 @@
 
 	    # scraping
 	    selenium
+	    internetarchive
 
 	    # r console
 	    radian
@@ -37,6 +38,9 @@
 
 	    # translate
 	    deep-translator
+
+	    # email
+	    imap-tools
 
 	    ]))
     ];

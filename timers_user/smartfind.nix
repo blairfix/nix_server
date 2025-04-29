@@ -29,7 +29,7 @@
 	    ps
 	];
 	script = ''
-	    bash /home/blair/cloud_work/smart_find/is_smartfind_running.sh
+	    bash /home/blair/Projects/smart_find/is_smartfind_running.sh
 	    '';
     };
 }

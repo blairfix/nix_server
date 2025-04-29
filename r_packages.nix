@@ -64,20 +64,20 @@
 		ggtext
 		tm
 		ngramr
-		readxlsb
+		#readxlsb
 
 
-		# blair's packages
-		(buildRPackage {
-		 name = "bfstr";
-		 src = fetchFromGitHub {
-		 owner = "blairfix";
-		 repo = "bfstr";
-		 rev = "master";
-		 sha256 = "sha256-3MT+tTQpcpoNbknadRf1QBPI0EXm3q+nMuL8GJ20bFM";
-		 };
-		 propagatedBuildInputs = [ Rcpp RcppArmadillo BH ];
-		 })
+	    # blair's packages
+	    (buildRPackage {
+	     name = "bfstr";
+	     src = fetchFromGitHub {
+	     owner = "blairfix";
+	     repo = "bfstr";
+	     rev = "master";
+	     sha256 = "sha256-3MT+tTQpcpoNbknadRf1QBPI0EXm3q+nMuL8GJ20bFM";
+	     };
+	     propagatedBuildInputs = [ Rcpp RcppArmadillo BH ];
+	     })
 
 	    (buildRPackage {
 	     name = "bfstat";

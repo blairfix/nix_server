@@ -34,6 +34,9 @@ services.caddy = {
 	    reverse_proxy 127.0.0.1:9571
 	}
 
+	http://fix-pdf.com {
+	    reverse_proxy 127.0.0.1:9575
+	}
 
 	'';
 };

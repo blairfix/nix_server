@@ -124,6 +124,7 @@
 	ffmpeg
 	vlc
 	kazam
+	zoom-us
 
 	# finance
 	#gnucash
@@ -171,10 +172,6 @@
 	
 	# downloading
 	flexget
-
-	# email
-	thunderbird
-
 
 	];
 }

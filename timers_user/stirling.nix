@@ -1,28 +1,30 @@
 { config, pkgs, ... }:
 {
 
-    # thunderbird 
+    # stirling 
     #----------------------------------------
 
-    systemd.timers."thunderbird" = {
+    systemd.timers."stirling" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
 	    OnBootSec = "1 m";
-	    Unit = "thunderbird.service";
+	    Unit = "stirling.service";
 	};
     };
 
-    systemd.services."thunderbird" = {
+    systemd.services."stirling" = {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
 	};
-	path = with pkgs; [ 
+
+	path = with pkgs; [
+	    docker
+	    docker-compose
 	    bash
-	    thunderbird
 	];
 	script = ''
-	    bash /home/blair/cloud_work/timesheet/thunderbird_sync.sh
+	    bash /home/blair/cronjobs/active/stirling_start
 	    '';
     };
 }
