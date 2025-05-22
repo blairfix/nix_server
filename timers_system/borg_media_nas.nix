@@ -7,7 +7,7 @@
     systemd.timers."borg_media_nas" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
-	    OnCalendar = "00/6:20";
+	    OnCalendar= "*-*-* 03:20:00";
 	    Persistent = "true";
 	    Unit = "borg_media_nas.service";
 	};
