@@ -164,8 +164,6 @@
 	# hugo
 	hugo
 
-	# meetings
-	skypeforlinux
 
 	# containers
 	docker-compose

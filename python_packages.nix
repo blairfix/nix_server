@@ -21,7 +21,7 @@
 	    radian
 
 	    # linode
-	    #boto
+	    boto3
 
 	    # ssl
 	    requests 
