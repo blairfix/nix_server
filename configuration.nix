@@ -26,7 +26,9 @@
 	    #----------------------------
 
 	    ./timers_system/borg_blair.nix
+	    ./timers_system/borg_blair_nas.nix
 	    ./timers_system/borg_media.nix
+	    ./timers_system/borg_media_nas.nix
 	    ./timers_system/camera_sync.nix
 
 
