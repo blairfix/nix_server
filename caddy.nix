@@ -38,6 +38,11 @@ services.caddy = {
 	    reverse_proxy 127.0.0.1:9575
 	}
 
+	http://fix-ladder.com {
+	    reverse_proxy 127.0.0.1:4037
+	}
+
+
 	'';
 };
 

@@ -40,6 +40,7 @@
 	    ./timers_user/jellyfin.nix
 	    ./timers_user/imap.nix
 	    ./timers_user/komga.nix
+	    ./timers_user/ladder.nix
 	    ./timers_user/mealie.nix
 	    ./timers_user/nextcloud.nix
 	    ./timers_user/photoprism.nix
