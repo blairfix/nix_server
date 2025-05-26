@@ -55,6 +55,7 @@
 	    ./timers_user/sub_calendar.nix
 	    ./timers_user/television.nix
 	    ./timers_user/wordpress.nix
+	    ./timers_user/wp_bak.nix
 
 	    ];
 
