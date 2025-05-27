@@ -47,6 +47,7 @@
 	    ./timers_user/pp_convert.nix
 	    ./timers_user/pp_index.nix
 	    ./timers_user/rclone.nix
+	    ./timers_user/raid_email.nix
 	    ./timers_user/sf_archive.nix
 	    ./timers_user/smartfind.nix
 	    ./timers_user/social_email.nix
