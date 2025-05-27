@@ -7,7 +7,7 @@
     systemd.timers."raid_email" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
-	    OnCalendar = "*-*-01 04:25:00";
+	    OnCalendar= "*-*-* 09:45:00";
 	    Persistent = "true";
 	    Unit = "raid_email.service";
 	};
