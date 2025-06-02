@@ -20,9 +20,37 @@
 	    User = "blair";
 	};
 
-	path = with pkgs; [ 
+	path = with pkgs;
+	let  R-with-my-packages = rWrapper.override{
+	    packages = with rPackages; [ 
+
+		lubridate
+		scales
+		magrittr
+		here
+		data_table
+		mailR
+
+		(buildRPackage {
+		 name = "bfgg";
+		 src = fetchFromGitHub {
+		 owner = "blairfix";
+		 repo = "bfgg";
+		 rev = "master";
+		 sha256 = "sha256-y2E8QYjiuHHVxgS+LXv5nYL8RBFDekD5nYgRdNZly7g";
+		 };
+		 propagatedBuildInputs = [ ggplot2 gridExtra data_table here ];
+		 })
+
+
+	    ];
+	};
+
+
+
+	in [ 
 	    bash
-	    R
+	    R-with-my-packages
 	];
 	script = ''
 	    bash /home/blair/Projects/scrape_twitter/email/send_analysis.sh

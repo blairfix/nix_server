@@ -20,9 +20,17 @@
 	    WorkingDirectory = "/home/blair/Projects/raid_status/";
 	};
 
-	path = with pkgs; [ 
+	path = with pkgs;
+	let  R-with-my-packages = rWrapper.override{
+	    packages = with rPackages; [ 
+		here
+		mailR
+	    ];
+	};
+
+	in [ 
 	    bash
-	    R
+	    R-with-my-packages
 	];
 	script = ''
 	    bash /home/blair/Projects/raid_status/run.sh

@@ -25,10 +25,23 @@
 	    User = "blair";
 	    WorkingDirectory = "/home/blair/cloud_work/timesheet/";
 	};
-	path = with pkgs; [ 
+
+	path = with pkgs;
+
+	let R-with-my-packages = rWrapper.override{
+	    packages = with rPackages; [ 
+		data_table
+		here
+		lubridate
+		magrittr
+
+	    ];
+	};
+
+	in [ 
 	    bash
 	    python
-	    R
+	    R-with-my-packages
 	];
 	script = ''
 	    bash /home/blair/cloud_work/timesheet/runall.sh

@@ -26,10 +26,34 @@
 	    Type = "simple";
 	    User = "blair";
 	};
-	path = with pkgs; [ 
+
+	path = with pkgs; 
+
+	let  R-with-my-packages = rWrapper.override{
+	    packages = with rPackages; [ 
+
+		here
+		lubridate
+		mailR
+		scales
+
+		(buildRPackage {
+		 name = "bfgg";
+		 src = fetchFromGitHub {
+		 owner = "blairfix";
+		 repo = "bfgg";
+		 rev = "master";
+		 sha256 = "sha256-y2E8QYjiuHHVxgS+LXv5nYL8RBFDekD5nYgRdNZly7g";
+		 };
+		 propagatedBuildInputs = [ ggplot2 gridExtra data_table here ];
+		 })
+	    ];
+	};
+
+	in [ 
 	    bash
 	    python
-	    R
+	    R-with-my-packages
 	    firefox
 	];
 	script = ''

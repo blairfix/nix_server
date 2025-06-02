@@ -17,10 +17,35 @@
 	    Type = "simple";
 	    User = "blair";
 	};
-	path = with pkgs; [ 
+
+	path = with pkgs; 
+
+	let  R-with-my-packages = rWrapper.override{
+	    packages = with rPackages; [ 
+
+		data_table
+		here
+		magrittr
+		stringr
+
+		(buildRPackage {
+		 name = "bfstr";
+		 src = fetchFromGitHub {
+		 owner = "blairfix";
+		 repo = "bfstr";
+		 rev = "master";
+		 sha256 = "sha256-3MT+tTQpcpoNbknadRf1QBPI0EXm3q+nMuL8GJ20bFM";
+		 };
+		 propagatedBuildInputs = [ Rcpp RcppArmadillo BH ];
+		 })
+
+	    ];
+	};
+
+	in [ 
 	    bash
 	    flexget
-	    R
+	    R-with-my-packages
 	];
 	script = ''
 	    bash /home/blair/Projects/television/runall.sh

@@ -18,12 +18,22 @@
 	    Type = "simple";
 	    User = "blair";
 	};
-	path = with pkgs; [
+
+	path = with pkgs;
+	let  R-with-my-packages = rWrapper.override{
+            packages = with rPackages; [ 
+		here
+		lubridate
+		magrittr
+	    ];
+	};
+
+	in [
 	    bash
 	    trash-cli
 	    gnutar
 	    xz
-	    R
+	    R-with-my-packages
 	];
 	script = ''
 	   bash /home/blair/cronjobs/active/sf_archive 

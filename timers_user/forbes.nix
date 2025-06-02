@@ -18,15 +18,28 @@
 	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
 		selenium
 	]);
+
     in {
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
 	};
-	path = with pkgs; [ 
+
+	path = with pkgs;
+	let  R-with-my-packages = rWrapper.override{
+            packages = with rPackages; [ 
+		data_table
+		here
+		lubridate
+		magrittr
+		mailR
+	    ];
+	};
+
+	 in  [ 
 	    bash
 	    python
-	    R
+	    R-with-my-packages 
 	    firefox
 	];
 	script = ''

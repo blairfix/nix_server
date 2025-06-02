@@ -21,10 +21,19 @@
 	    Type = "simple";
 	    User = "blair";
 	};
-	path = with pkgs; [
+	path = with pkgs; 
+
+	let  R-with-my-packages = rWrapper.override{
+            packages = with rPackages; [ 
+		data_table
+		magrittr
+	    ];
+	};
+
+	in [
 	    bash
 	    python
-	    R
+	    R-with-my-packages
 	    firefox
 	    ps
 	];
