@@ -7,7 +7,7 @@
     systemd.timers."bn_email" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
-	    OnCalendar= "*-*-* 03:00:00";
+	    OnCalendar= "*-01,04,07,10-01 00:00:00";
 	    Persistent = "true";
 	    Unit = "bn_email.service";
 	};
@@ -32,6 +32,7 @@
 	    borgbackup
 	    gnutar
 	    pigz
+	    fuse
 	    s3cmd
 	    R-with-my-packages
 	];

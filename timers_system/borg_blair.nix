@@ -20,10 +20,18 @@
 	    WorkingDirectory = "/home/blair/Projects/borg/blair";
 	};
 
-	path = with pkgs; [ 
+	path = with pkgs;
+	let  R-with-my-packages = rWrapper.override{
+            packages = with rPackages; [ 
+		mailR
+	    ];
+	};
+	in [ 
 	    bash
 	    borgbackup
+	    R-with-my-packages 
 	];
+
 	script = ''
 	    bash /home/blair/Projects/borg/blair/backup.sh
 	    '';

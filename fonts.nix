@@ -7,7 +7,7 @@
 	freefont_ttf
 	noto-fonts 
 	dejavu_fonts
-	ubuntu_font_family 
+	ubuntu-classic
 	liberation_ttf
 	font-awesome
 	roboto

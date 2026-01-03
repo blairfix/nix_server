@@ -7,7 +7,7 @@
     systemd.timers."borg_blair_nas" = {
 	wantedBy = [ "timers.target" ];
 	timerConfig = {
-	    OnCalendar= "*-*-* 03:00:00";
+	    OnCalendar = "*-*-*  *:35:00";
 	    Persistent = "true";
 	    Unit = "borg_blair_nas.service";
 	};
@@ -20,9 +20,17 @@
 	    WorkingDirectory = "/home/blair/Projects/borg/blair";
 	};
 
-	path = with pkgs; [ 
+	path = with pkgs;
+	let  R-with-my-packages = rWrapper.override{
+	    packages = with rPackages; [ 
+		mailR
+	    ];
+	};
+
+	in [ 
 	    bash
 	    borgbackup
+	    R-with-my-packages
 	];
 	script = ''
 	    bash /home/blair/Projects/borg/blair/backup_nas.sh

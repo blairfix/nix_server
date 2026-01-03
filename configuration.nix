@@ -13,6 +13,7 @@
 	    ./packages.nix
 	    ./fonts.nix
 	    ./nvim.nix
+	    #./minecraft.nix
 
 	    # server configs
 	    #----------------------------
@@ -29,16 +30,20 @@
 	    ./timers_system/borg_blair_nas.nix
 	    ./timers_system/borg_media.nix
 	    ./timers_system/borg_media_nas.nix
+	    ./timers_system/bn_email.nix
 	    ./timers_system/camera_sync.nix
+
 
 
 	    # user timers
 	    #----------------------------
 
 	    ./timers_user/audiobookshelf.nix
+	    ./timers_user/caspcom.nix
 	    ./timers_user/forbes.nix
 	    ./timers_user/jellyfin.nix
 	    ./timers_user/imap.nix
+	    ./timers_user/internet_archive.nix
 	    ./timers_user/komga.nix
 	    ./timers_user/ladder.nix
 	    ./timers_user/mealie.nix
@@ -46,7 +51,6 @@
 	    ./timers_user/photoprism.nix
 	    ./timers_user/pp_convert.nix
 	    ./timers_user/pp_index.nix
-	    ./timers_user/rclone.nix
 	    ./timers_user/raid_email.nix
 	    ./timers_user/sf_archive.nix
 	    ./timers_user/smartfind.nix

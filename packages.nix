@@ -41,6 +41,7 @@
 	ncdu
 	xlsx2csv 
 	parted
+	radian
 
 
 	# utilities
@@ -58,7 +59,9 @@
 	qpdf
 	csvtool
 	yt-dlp
-	poppler_utils
+	poppler-utils
+	pigz
+	ghostscript
 
 	# spell check
 	aspell
@@ -100,7 +103,7 @@
 
 	# office suites
 	libreoffice
-	onlyoffice-bin
+	onlyoffice-desktopeditors
 
 	# documents viewers
 	kdePackages.okular
@@ -124,7 +127,7 @@
 	ffmpeg
 	vlc
 	kazam
-	zoom-us
+	#zoom-us
 
 	# finance
 	#gnucash

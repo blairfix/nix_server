@@ -1,0 +1,69 @@
+{ config, pkgs, ... }:
+{
+
+    # internet_archive 
+    #----------------------------------------
+
+    systemd.timers."internet_archive" = {
+	wantedBy = [ "timers.target" ];
+	timerConfig = {
+	    OnCalendar = "*-*-04 11:00:00";
+
+	    Persistent = "true";
+	    Unit = "internet_archive.service";
+	};
+    };
+
+    systemd.services."internet_archive" = let
+	python = pkgs.python3.withPackages (ppkgs: with ppkgs; [
+
+		internetarchive 
+		pandas 
+		datetime
+
+	]);
+
+    in {
+	serviceConfig = {
+	    Type = "simple";
+	    User = "blair";
+	    WorkingDirectory = "/home/blair/cloud_work/internet_archive";
+	};
+
+	path = with pkgs;
+	let  R-with-my-packages = rWrapper.override{
+	    packages = with rPackages; [ 
+
+		magrittr
+		here
+		stringr
+		data_table
+		stringi
+		stringr
+
+		(buildRPackage {
+		 name = "bfstr";
+		 src = fetchFromGitHub {
+		 owner = "blairfix";
+		 repo = "bfstr";
+		 rev = "master";
+		 sha256 = "sha256-oZCUpxnmagSWB247c9fHAArgVOIPGnZqHucuuCUM9kE";
+		 };
+		 propagatedBuildInputs = [ Rcpp RcppArmadillo BH ];
+		 })
+
+	    ];
+	};
+
+	in  [ 
+	    bash
+	    python
+	    wget
+	    R-with-my-packages 
+	];
+	script = ''
+	    bash /home/blair/cloud_work/internet_archive/runall.sh
+	    '';
+    };
+
+}

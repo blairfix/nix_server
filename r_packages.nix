@@ -118,7 +118,7 @@
 	     owner = "blairfix";
 	     repo = "hubbert";
 	     rev = "master";
-	     sha256 = "sha256-S9J/yClI7u/PzgbA5ZnVyKvePsxFkI28fivPicmST7w=";
+	     sha256 = "sha256-5RwJwmDQLE97trrP4ZPh/GQJrY4YCZ8uoaQH2cY9H0c=";
 	     };
 	     propagatedBuildInputs = [ Rcpp RcppArmadillo BH ];
 	     })

@@ -18,7 +18,7 @@
 	    internetarchive
 
 	    # r console
-	    radian
+	    #radian
 
 	    # linode
 	    boto3
@@ -28,7 +28,7 @@
 	    cryptography
 
 	    # audio
-	    eyeD3
+	    eyed3
 
 	    # download
 	    transmission-rpc
