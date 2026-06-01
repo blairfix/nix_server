@@ -20,6 +20,7 @@
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
+	    WorkingDirectory = "/home/blair/Projects/smart_find";
 	};
 	path = with pkgs; 
 

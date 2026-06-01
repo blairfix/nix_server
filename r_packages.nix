@@ -53,7 +53,7 @@
 		poweRlaw
 		magick
 		truncnorm
-		fuzzyjoin
+		#fuzzyjoin
 		ppcor
 		profvis
 

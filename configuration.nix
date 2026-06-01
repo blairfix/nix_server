@@ -40,7 +40,7 @@
 
 	    ./timers_user/audiobookshelf.nix
 	    ./timers_user/caspcom.nix
-	    ./timers_user/forbes.nix
+	    ./timers_user/forbes_de.nix
 	    ./timers_user/jellyfin.nix
 	    ./timers_user/imap.nix
 	    ./timers_user/internet_archive.nix

@@ -22,7 +22,7 @@
 	firefox 
 	geckodriver 
 	lynx
-	nodePackages.mathjax
+	mathjax
 
 	# file browser
 	kdePackages.dolphin
