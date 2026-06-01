@@ -6,8 +6,6 @@
 
 
 	    # configs
-	    #----------------------------
-
 	    ./r_packages.nix
 	    ./python_packages.nix
 	    ./packages.nix
@@ -16,16 +14,12 @@
 	    #./minecraft.nix
 
 	    # server configs
-	    #----------------------------
-
 	    ./transmission.nix
 	    ./samba.nix
 	    ./caddy.nix
 
 
 	    # system timers
-	    #----------------------------
-
 	    ./timers_system/borg_blair.nix
 	    ./timers_system/borg_blair_nas.nix
 	    ./timers_system/borg_media.nix
@@ -34,10 +28,7 @@
 	    ./timers_system/camera_sync.nix
 
 
-
 	    # user timers
-	    #----------------------------
-
 	    ./timers_user/audiobookshelf.nix
 	    ./timers_user/caspcom.nix
 	    ./timers_user/forbes_de.nix
@@ -52,8 +43,6 @@
 	    ./timers_user/pp_convert.nix
 	    ./timers_user/pp_index.nix
 	    ./timers_user/raid_email.nix
-	    ./timers_user/sf_archive.nix
-	    ./timers_user/smartfind.nix
 	    ./timers_user/social_email.nix
 	    ./timers_user/social.nix
 	    ./timers_user/stirling.nix
@@ -61,6 +50,11 @@
 	    ./timers_user/television.nix
 	    ./timers_user/wordpress.nix
 	    ./timers_user/wp_bak.nix
+
+	    # smartfind
+	    ./timers_user/smartfind.nix
+	    ./timers_user/sf_archive.nix
+	    ./timers_user/test_sf_stall.nix
 
 	    ];
 

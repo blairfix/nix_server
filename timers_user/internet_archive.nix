@@ -27,7 +27,7 @@
 	serviceConfig = {
 	    Type = "simple";
 	    User = "blair";
-	    WorkingDirectory = "/home/blair/cloud_work/internet_archive";
+	    WorkingDirectory = "/home/blair/Projects/internet_archive";
 	};
 
 	path = with pkgs;
@@ -62,7 +62,7 @@
 	    R-with-my-packages 
 	];
 	script = ''
-	    bash /home/blair/cloud_work/internet_archive/runall.sh
+	    bash /home/blair/Projects/internet_archive/runall.sh
 	    '';
     };
 
