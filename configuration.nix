@@ -48,13 +48,13 @@
 	    ./timers_user/stirling.nix
 	    ./timers_user/sub_calendar.nix
 	    ./timers_user/television.nix
-	    ./timers_user/wordpress.nix
+	    #./timers_user/wordpress.nix
 	    ./timers_user/wp_bak.nix
 
 	    # smartfind
-	    ./timers_user/smartfind.nix
-	    ./timers_user/sf_archive.nix
-	    ./timers_user/test_sf_stall.nix
+	    #./timers_user/smartfind.nix
+	    #./timers_user/sf_archive.nix
+	    #./timers_user/test_sf_stall.nix
 
 	    ];
 
