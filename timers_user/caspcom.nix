@@ -32,7 +32,8 @@
 		stringr
 
 		(buildRPackage {
-		 name = "bfstr";
+		 pname = "bfstr";
+		 version = "0.1";
 		 src = fetchFromGitHub {
 		 owner = "blairfix";
 		 repo = "bfstr";
